@@ -1,0 +1,131 @@
+/* app.css */
+/*
+	main-bg: #333741;
+	main-color: #E9F6FB;
+	bor-color: #59626D;
+*/
+
+html, body{
+	height: 100%;
+	background-color: #333741;
+	color: #E9F6FB !important;
+	margin: 0; 
+	overflow: hidden
+}
+
+header{
+	padding: 10px;
+}
+header a.link{
+	color: #E9F6FB !important;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.float-right{
+	float: right;
+}
+
+.float-left{
+	float: left;
+}
+
+.margin-10{
+	margin: 10px;
+}
+
+.btn-start{
+	background-color: #E9F6FB;
+	color: #333741;
+	padding: 12px 24px;
+	font-size: 16px;
+}
+.btn-start:hover{
+	background-color: #d1dde1;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Puzzle */
+#puzzle{
+    margin: auto;
+    border: 1px solid #59626D;
+    width: 430px;
+    height: 430px;
+    padding: 5px;
+}
+.puzzle_piece{
+	background-image: url(../img/city-cars-road-houses.jpg);
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+    margin: 2px;
+    float: left;
+    cursor: pointer;
+}
+
+@media (max-width: 767px){
+	#puzzle{
+		width: 100%;
+		height: 320px;
+	}
+	.puzzle_piece{
+		width: 72px;
+		height: 72px;
+	}
+}
+
+.piece1{background-position: 0px 0px;}
+.piece2{background-position: -100px 0px;}
+.piece3{background-position: -200px 0px;}
+.piece4{background-position: -300px 0px;}
+.piece5{background-position: 0px -100px;}
+.piece6{background-position: -100px -100px;}
+.piece7{background-position: -200px -100px;}
+.piece8{background-position: -300px -100px;}
+.piece9{background-position: 0px -200px;}
+.piece10{background-position: -100px -200px;}
+.piece11{background-position: -200px -200px;}
+.piece12{background-position: -300px -200px;}
+.piece13{background-position: 0px -300px;}
+.piece14{background-position: -100px -300px;}
+.piece15{background-position: -200px -300px;}
+.piece16{background: none;}
+
+/* Scores */
+#scores{
+	margin: auto;
+	border: 1px solid #59626D;
+	padding: 5px;
+	text-align: center;
+}
+
+.scores_table_item{
+	width: 300px;
+    margin: auto;
+    border: 1px solid #E9F6FB;
+    font-size: 18px;
+}
+
+
