@@ -87,6 +87,8 @@ AppView.prototype = {
 
 	stopTimer: function(){
 		clearInterval(this.timerInterval);
+		alert("Congratulations, you solved the puzzle");
+		this.enableStartBtn();
 		this.onTimerStoped.notify({time : this.timer.text()});
 	},
 
@@ -96,5 +98,6 @@ AppView.prototype = {
 
 	enableStartBtn: function(){
 		this.start_btn.removeAttr("disabled");
+		this.start_btn.attr("value", "Restart");
 	}
 }

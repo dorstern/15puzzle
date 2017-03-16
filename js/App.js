@@ -32,10 +32,11 @@ App.prototype = {
 			for (var j = 0; j < 4; j++){
 				var piece = new PuzzlePiece(i,j,index);
 				this.puzzle.push(piece);
+				var completed_piece = new PuzzlePiece(i,j,index);
+				this.completed_puzzle.push(completed_piece);
 				index = index + 1;
 			}
 		}
-		this.completed_puzzle = JSON.parse(JSON.stringify(this.puzzle));
 	},
 
 	onStartClicked: function(){
@@ -46,7 +47,9 @@ App.prototype = {
 
 	shuffle: function(array){
 		var currentIndex = array.length, temporaryValue, randomIndex;
+		var counter = 0;
 		while (currentIndex !== 0) {
+			counter++;
 			randomIndex = Math.floor(Math.random() * currentIndex);
 			currentIndex -= 1;
 			this.swapPuzzlePieces(array[currentIndex], array[randomIndex]);
@@ -87,10 +90,11 @@ App.prototype = {
 
 	checkPuzzleCompleted: function(){
 		for (var i = 0; i < this.num_pieces; i++){
-			if (this.completed_puzzle[i] != this.puzzle[i]){
+			if (this.completed_puzzle[i].index != this.puzzle[i].index){
 				return false;
 			}
 		}
+
 		this.view.stopTimer();
 	},
 
