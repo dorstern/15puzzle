@@ -54,35 +54,8 @@ AppView.prototype = {
 	    piece2.after(piece1).remove();
 	},
 
-	showTimer: function(){
-		var _this = this;
-		var offset = Date.now();
-		var clock = 0;
-		this.timerInterval = setInterval(function(){
-		   var now = Date.now();
-		   var date = now - offset;
-			_this.timer.text(_this.formatTime(date));
-		}, 1000);
-	},
-
-	formatTime: function(time) {
-		var h = m = s = ms = 0;
-		var newTime = '';
-
-		h = Math.floor( time / (60 * 60 * 1000) );
-		time = time % (60 * 60 * 1000);
-		m = Math.floor( time / (60 * 1000) );
-		time = time % (60 * 1000);
-		s = Math.floor( time / 1000 );
-		ms = time % 1000;
-
-		newTime = this.pad(h, 2) + ':' + this.pad(m, 2) + ':' + this.pad(s, 2);
-		return newTime;
-	},
-
-	pad: function(num, size) {
-		var s = "0000" + num;
-		return s.substr(s.length - size);
+	showTimer: function(time){
+		this.timer.text(time);
 	},
 
 	stopTimer: function(){
